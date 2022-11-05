@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+
+license="MIT License"
+
+[[mods]]
+
+modId="superflatchanges"
+version="0.0.1-1.19.2"
+
+displayName="SuperFlatChanges"
+logoFile=""
+credits=""
+authors="radston12"
+
+description='''
+A mod that changes the experiance of Minecraft SuperFlat
+'''
+
+[[dependencies.superflatchanges]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.superflatchanges]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
