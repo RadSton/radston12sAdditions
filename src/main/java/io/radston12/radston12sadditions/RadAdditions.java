@@ -1,8 +1,8 @@
-package io.radston12.superflatchanges;
+package io.radston12.radston12sadditions;
 
 import com.mojang.logging.LogUtils;
-import io.radston12.superflatchanges.block.ModBlocks;
-import io.radston12.superflatchanges.item.ModItems;
+import io.radston12.radston12sadditions.block.ModBlocks;
+import io.radston12.radston12sadditions.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,14 +13,17 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(SuperFlatChanges.MOD_ID)
-public class SuperFlatChanges {
+@Mod(RadAdditions.MOD_ID)
+public class RadAdditions {
 
-    public static final String MOD_ID = "superflatchanges";
+    public static final String MOD_ID = "radston12sadditions";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public SuperFlatChanges() {
+    public RadAdditions() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.initItems();
+        ModBlocks.initBlocks();
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

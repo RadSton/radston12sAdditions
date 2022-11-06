@@ -5,8 +5,8 @@ plugins {
 }
 
 version = '0.0.1-1.19.2'
-group = 'io.radston12.superflatchanges'
-archivesBaseName = 'superflatchanges'
+group = 'io.radston12.radston12sadditions'
+archivesBaseName = 'radston12sadditions'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -97,7 +97,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'superflatchanges', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'radston12sadditions', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 superflatchanges {
@@ -135,12 +135,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "superflatchanges",
-                "Specification-Vendor"    : "superflatchangessareus",
+                "Specification-Title"     : "radston12sadditions",
+                "Specification-Vendor"    : "radston12sadditions",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "impvendor",
+                "Implementation-Vendor"   : "radston12sadditions",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
