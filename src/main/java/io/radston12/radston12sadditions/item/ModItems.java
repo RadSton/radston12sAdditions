@@ -1,6 +1,7 @@
 package io.radston12.radston12sadditions.item;
 
 import io.radston12.radston12sadditions.RadAdditions;
+import io.radston12.radston12sadditions.item.custom.EightballItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,7 +14,7 @@ import java.util.function.Supplier;
 
 public class ModItems {
 
-    private static final CreativeModeTab DEFCREATIVE_MODE_TAB = ModCreativeModeTab.SUPERFLATCHANGES_TAB;
+    private static final CreativeModeTab DEFCREATIVE_MODE_TAB = ModCreativeModeTab.RADADDITIONS_TAB;
 
     public static final DeferredRegister<Item> DEFFERD_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RadAdditions.MOD_ID);
 
@@ -21,6 +22,11 @@ public class ModItems {
 
     public static void initItems() {
         addItem("zircon");
+        addItem("eightball", () -> new EightballItem(DEFCREATIVE_MODE_TAB));
+    }
+
+    public static RegistryObject<? extends Item> getItem(String name) {
+        return ITEMS.get(name);
     }
 
     public static <T extends Item> void addItem(String name, Supplier<T> itemSup) {

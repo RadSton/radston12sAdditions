@@ -1,6 +1,7 @@
 package io.radston12.radston12sadditions.block;
 
 import io.radston12.radston12sadditions.RadAdditions;
+import io.radston12.radston12sadditions.block.custom.*;
 import io.radston12.radston12sadditions.item.ModCreativeModeTab;
 import io.radston12.radston12sadditions.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -19,16 +20,22 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
 
-    private static final CreativeModeTab DEFAULT_CREATIVE_TAB = ModCreativeModeTab.SUPERFLATCHANGES_TAB;
+    private static final CreativeModeTab DEFAULT_CREATIVE_TAB = ModCreativeModeTab.RADADDITIONS_TAB;
 
     public static final DeferredRegister<Block> DEFFERD_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, RadAdditions.MOD_ID);
 
     public static final HashMap<String, RegistryObject<? extends Block>> BLOCKS = new HashMap<>();
 
     public static void initBlocks() {
+        addNewBlock("cage", () -> new Cage(BlockBehaviour.Properties.of(Material.STONE)));
+        addNewBlock("fishtank", () -> new FishTank(BlockBehaviour.Properties.of(Material.STONE)));
+        addNewBlock("plantstation", () -> new PlantStation(BlockBehaviour.Properties.of(Material.STONE)));
+        addNewBlock("pyrotechnic_table", () -> new PyrotechnicTable(BlockBehaviour.Properties.of(Material.STONE)));
+        addNewBlock("sawmill", () -> new SawMill(BlockBehaviour.Properties.of(Material.STONE)));
+    }
 
-        addNewBlock("zircon_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops().jumpFactor(2f)));
-
+    public static RegistryObject<? extends Block> getBlock(String name) {
+        return BLOCKS.get(name);
     }
 
     private static <T extends Block> void addNewBlock(String name, Supplier<T> block) {

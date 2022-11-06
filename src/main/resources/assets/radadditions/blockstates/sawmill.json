@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "radadditions:block/sawmill",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "radadditions:block/sawmill"
+    },
+    "facing=south": {
+      "model": "radadditions:block/sawmill",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "radadditions:block/sawmill",
+      "y": 270
+    }
+  }
+}

@@ -5,26 +5,26 @@ license="MIT License"
 
 [[mods]]
 
-modId="radston12sadditions"
+modId="radadditions"
 version="0.0.1-1.19.2"
 
-displayName="SuperFlatChanges"
+displayName="radston12´s Additions"
 logoFile=""
 credits=""
 authors="radston12"
 
 description='''
-A mod that changes the experiance of Minecraft SuperFlat
+A mod that adds my ideas to minecraft
 '''
 
-[[dependencies.superflatchanges]]
+[[dependencies.radadditions]]
     modId="forge"
     mandatory=true
     versionRange="[43,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.superflatchanges]]
+[[dependencies.radadditions]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.2,1.20)"
