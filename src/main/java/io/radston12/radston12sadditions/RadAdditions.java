@@ -34,7 +34,6 @@ public class RadAdditions {
     }
 
     private static void registerCommonSetup(final FMLCommonSetupEvent event) {
-        LOGGER.error("has been called now stfu");
         ModVillagers.registerPOIs();
     }
 
