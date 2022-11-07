@@ -1,6 +1,12 @@
 {
-  "parent": "block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "radadditions:block/pyrotechnic_table"
+    "down": "minecraft:block/stone_bricks",
+    "east": "radadditions:block/pyrotechnic_table/side",
+    "north": "radadditions:block/pyrotechnic_table/front",
+    "particle": "radadditions:block/pyrotechnic_table/front",
+    "south": "radadditions:block/pyrotechnic_table/side",
+    "up": "radadditions:block/pyrotechnic_table/top",
+    "west": "radadditions:block/pyrotechnic_table/front"
   }
 }

@@ -4,8 +4,11 @@ import io.radston12.radston12sadditions.RadAdditions;
 import io.radston12.radston12sadditions.item.ModItems;
 import io.radston12.radston12sadditions.villagers.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.FireworkRocketItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
@@ -21,10 +24,6 @@ import java.util.List;
 public class VillagerEvents {
 
     public static final HashMap<String, List<MerchantOffer>> customTradesList = new HashMap<>();
-
-    public static void initVillagerTrades() {
-
-    }
 
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
@@ -62,7 +61,53 @@ public class VillagerEvents {
                 }
             }
 
+        } else if(ModVillagers.getProfession("pyrotechnic").get() == event.getType()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            List<MerchantOffer> offers = new ArrayList<>();
+
+            offers.add(new MerchantOffer(new ItemStack(Items.EMERALD, 2), new ItemStack(Items.GUNPOWDER, 10),10,8,0.02f));
+            offers.add(new MerchantOffer(new ItemStack(Items.EMERALD, 14), new ItemStack(Items.TNT, 3),10,8,0.02f));
+            offers.add(new MerchantOffer(new ItemStack(Items.EMERALD, 64), new ItemStack(Items.END_CRYSTAL, 2),10,8,0.02f));
+            offers.add(new MerchantOffer(new ItemStack(Items.EMERALD, 8), new ItemStack(Items.TNT_MINECART, 1),10,8,0.02f));
+            ItemStack stack = new ItemStack(Items.FIREWORK_ROCKET, 16);
+            CompoundTag tag = stack.getOrCreateTag();
+            CompoundTag tag2 = new CompoundTag();
+            tag2.putInt("Flight", 1);
+            tag.put("Fireworks", tag2);
+            offers.add(new MerchantOffer(new ItemStack(Items.EMERALD, 1),stack,10,8,0.02f));
+
+            stack = new ItemStack(Items.FIREWORK_ROCKET, 16);
+            tag = stack.getOrCreateTag();
+            tag2 = new CompoundTag();
+            tag2.putInt("Flight", 2);
+            tag.put("Fireworks", tag2);
+            offers.add(new MerchantOffer(new ItemStack(Items.EMERALD, 3),stack,10,8,0.02f));
+
+            stack = new ItemStack(Items.FIREWORK_ROCKET, 16);
+            tag = stack.getOrCreateTag();
+            tag2 = new CompoundTag();
+            tag2.putInt("Flight", 3);
+            tag.put("Fireworks", tag2);
+            offers.add(new MerchantOffer(new ItemStack(Items.EMERALD, 5),stack,10,8,0.02f));
+
+            offers.add(new MerchantOffer(new ItemStack(Items.FIREWORK_ROCKET, 16),new ItemStack(Items.EMERALD, 4),10,8,0.02f));
+            offers.add(new MerchantOffer(new ItemStack(Items.TNT, 16),new ItemStack(Items.EMERALD, 4),10,8,0.02f));
+            offers.add(new MerchantOffer(new ItemStack(Items.TNT_MINECART, 1),new ItemStack(Items.EMERALD, 3),10,8,0.02f));
+            offers.add(new MerchantOffer(new ItemStack(Items.GUNPOWDER, 20),new ItemStack(Items.EMERALD, 4),10,8,0.02f));
+            offers.add(new MerchantOffer(new ItemStack(Items.END_CRYSTAL, 2),new ItemStack(Items.EMERALD, 54),10,8,0.02f));
+
+            // TODO: #3 add modded tnts
+
+
+            for(int i = 1; i <= 5; i++) {
+                for(MerchantOffer offer : offers) {
+                    trades.get(i).add((trader,rand) -> offer);
+                }
+            }
+
         }
+
     }
 
 }
