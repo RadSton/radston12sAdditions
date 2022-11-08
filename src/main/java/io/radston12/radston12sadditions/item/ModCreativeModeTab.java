@@ -8,7 +8,7 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab RADADDITIONS_TAB = new CreativeModeTab("radadditions") {
         @Override
         public ItemStack makeIcon() {
-            return ModItems.ITEMS.containsKey("zircon") ? new ItemStack(ModItems.ITEMS.get("zircon").get()) : new ItemStack(Items.PAPER);
+            return ModItems.ITEMS.containsKey("manner") ? new ItemStack(ModItems.ITEMS.get("manner").get()) : new ItemStack(Items.PAPER);
         }
     };
 }

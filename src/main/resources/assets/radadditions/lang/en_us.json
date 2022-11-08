@@ -10,6 +10,30 @@
   "item.radadditions.manner": "Manner Schnitten",
 
   "entity.minecraft.villager.radadditions.lumberjack": "Lumberjack",
+  "entity.minecraft.villager.radadditions.pyrotechnic": "Pyrotechnic",
+  "entity.minecraft.villager.radadditions.botanist": "Gardener",
+  "entity.minecraft.villager.radadditions.zoologist": "Zoologist",
+  "entity.minecraft.villager.radadditions.oceanographer": "Oceanographer",
 
-  "itemGroup.radadditions": "radston12´s Additions"
+
+
+  "itemGroup.radadditions": "radston12´s Additions",
+
+  "COMMENT1": "CUSTOM SPAWNEGG TRADES",
+
+  "spawneggs.radadditions.black": "Black Cat",
+  "spawneggs.radadditions.british_shorthair": "British Shorthair Cat",
+  "spawneggs.radadditions.calico": "Calico Cat",
+  "spawneggs.radadditions.jellie": "Jellie Cat",
+  "spawneggs.radadditions.persian": "Persian Cat",
+  "spawneggs.radadditions.ragdoll": "Ragdoll Cat",
+  "spawneggs.radadditions.red": "Red Cat",
+  "spawneggs.radadditions.siamese": "Siamesee Cat",
+  "spawneggs.radadditions.tabby": "Tabby Cat",
+  "spawneggs.radadditions.white": "White Cat",
+  "spawneggs.radadditions.lucy": "Lucy Axolotl",
+  "spawneggs.radadditions.wild": "Wild Axolotl",
+  "spawneggs.radadditions.gold": "Gold Axolotl",
+  "spawneggs.radadditions.cyan": "Cyan Axolotl",
+  "spawneggs.radadditions.blue": "Blue Axolotl"
 }

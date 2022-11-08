@@ -57,6 +57,7 @@ public class RadAdditions {
         LOGGER.debug("[REGISTER] Took %f",registerTook);
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
         
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -69,6 +70,10 @@ public class RadAdditions {
 
             LOGGER.debug("[COMMON_SETUP] Took %f",registerCommonTook);
         });
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event) {
+        ModBlocks.setRenderLayers(event);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

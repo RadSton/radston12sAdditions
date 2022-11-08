@@ -27,7 +27,6 @@ public class ModVillagers {
     public static final HashMap<String, RegistryObject<PoiType>> POI_TYPES = new HashMap<>();
     public static final HashMap<String, RegistryObject<VillagerProfession>> VIlLAGER_PROFESSIONS = new HashMap<>();
 
-
     public static void initVillagers() {
         addVillager("oceanographer", ModBlocks.getBlock("fishtank"), SoundEvents.VILLAGER_WORK_ARMORER);
         addVillager("zoologist", ModBlocks.getBlock("cage"), SoundEvents.VILLAGER_WORK_ARMORER);

@@ -1,7 +1,6 @@
 package io.radston12.radston12sadditions.item;
 
 import io.radston12.radston12sadditions.RadAdditions;
-import io.radston12.radston12sadditions.item.custom.EightballItem;
 import io.radston12.radston12sadditions.item.custom.MannerSchnitten;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,8 +22,6 @@ public class ModItems {
     public static final HashMap<String, RegistryObject<? extends Item>> ITEMS = new HashMap<>();
 
     public static void initItems() {
-        addItem("zircon");
-        addItem("eightball", () -> new EightballItem(DEFCREATIVE_MODE_TAB));
         addItem("manner", () -> new MannerSchnitten(new Item.Properties().food(new FoodProperties.Builder().nutrition(100).saturationMod(100).build()).tab(DEFCREATIVE_MODE_TAB).stacksTo(64)));
     }
 
