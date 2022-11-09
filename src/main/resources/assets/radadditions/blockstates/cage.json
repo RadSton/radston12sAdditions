@@ -1,7 +1,28 @@
 {
   "variants": {
-    "": {
+
+    "facing=down": {
+      "model": "radadditions:block/cage",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "radadditions:block/cage",
+      "y": 90
+    },
+    "facing=north": {
       "model": "radadditions:block/cage"
+    },
+    "facing=south": {
+      "model": "radadditions:block/cage",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "radadditions:block/cage",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "radadditions:block/cage",
+      "y": 270
     }
   }
 }

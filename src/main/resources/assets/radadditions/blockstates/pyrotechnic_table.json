@@ -1,7 +1,27 @@
 {
   "variants": {
-    "": {
+    "facing=down": {
+      "model": "radadditions:block/pyrotechnic_table",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "radadditions:block/pyrotechnic_table",
+      "y": 90
+    },
+    "facing=north": {
       "model": "radadditions:block/pyrotechnic_table"
+    },
+    "facing=south": {
+      "model": "radadditions:block/pyrotechnic_table",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "radadditions:block/pyrotechnic_table",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "radadditions:block/pyrotechnic_table",
+      "y": 270
     }
   }
 }

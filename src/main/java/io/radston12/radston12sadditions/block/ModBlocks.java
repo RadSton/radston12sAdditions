@@ -4,8 +4,6 @@ import io.radston12.radston12sadditions.RadAdditions;
 import io.radston12.radston12sadditions.block.custom.*;
 import io.radston12.radston12sadditions.item.ModCreativeModeTab;
 import io.radston12.radston12sadditions.item.ModItems;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -13,7 +11,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -23,23 +20,16 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
 
+    public static final DeferredRegister<Block> DEFFERD_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, RadAdditions.MOD_ID);
+    public static final HashMap<String, RegistryObject<? extends Block>> BLOCKS = new HashMap<>();
     private static final CreativeModeTab DEFAULT_CREATIVE_TAB = ModCreativeModeTab.RADADDITIONS_TAB;
 
-    public static final DeferredRegister<Block> DEFFERD_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, RadAdditions.MOD_ID);
-
-    public static final HashMap<String, RegistryObject<? extends Block>> BLOCKS = new HashMap<>();
-
     public static void initBlocks() {
-        addNewBlock("cage", () -> new Cage(BlockBehaviour.Properties.of(Material.GLASS)));
+        addNewBlock("cage", () -> new Cage(BlockBehaviour.Properties.of(Material.GLASS).noOcclusion()));
         addNewBlock("fishtank", () -> new FishTank(BlockBehaviour.Properties.of(Material.STONE)));
         addNewBlock("plantstation", () -> new PlantStation(BlockBehaviour.Properties.of(Material.STONE)));
         addNewBlock("pyrotechnic_table", () -> new PyrotechnicTable(BlockBehaviour.Properties.of(Material.STONE)));
         addNewBlock("sawmill", () -> new SawMill(BlockBehaviour.Properties.of(Material.STONE)));
-    }
-
-    public static void setRenderLayers(final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(getBlock("cage").get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(getBlock("sawmill").get(), RenderType.cutout());
     }
 
     public static RegistryObject<? extends Block> getBlock(String name) {

@@ -16,10 +16,12 @@
       "y": 270
     },
     "facing=down": {
-      "model": "radadditions:block/sawmill"
+      "model": "radadditions:block/sawmill",
+      "x": 90
     },
     "facing=up": {
-      "model": "radadditions:block/sawmill"
+      "model": "radadditions:block/sawmill",
+      "x": 270
     }
   }
 }

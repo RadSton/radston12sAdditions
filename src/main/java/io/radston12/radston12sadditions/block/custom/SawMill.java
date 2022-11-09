@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import org.jetbrains.annotations.NotNull;
 
 public class SawMill extends Block {
     public static final DirectionProperty FACING = DirectionProperty.create("facing");
@@ -25,15 +24,18 @@ public class SawMill extends Block {
     public BlockState getStateForPlacement(BlockPlaceContext placeContext) {
         return this.defaultBlockState().setValue(FACING, placeContext.getHorizontalDirection().getOpposite());
     }
+
     public BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
+
     public BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
+
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING); // edited
     }
     // COPIED END
-    
+
 }

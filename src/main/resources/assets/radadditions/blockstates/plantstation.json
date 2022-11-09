@@ -1,7 +1,28 @@
 {
   "variants": {
-    "": {
+
+    "facing=down": {
+      "model": "radadditions:block/plantstation",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "radadditions:block/plantstation",
+      "y": 90
+    },
+    "facing=north": {
       "model": "radadditions:block/plantstation"
+    },
+    "facing=south": {
+      "model": "radadditions:block/plantstation",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "radadditions:block/plantstation",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "radadditions:block/plantstation",
+      "y": 270
     }
   }
 }

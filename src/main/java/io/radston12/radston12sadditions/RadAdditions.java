@@ -21,6 +21,33 @@ public class RadAdditions {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    public RadAdditions() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+
+        float initStart = System.currentTimeMillis();
+        init();
+        float initTook = (System.currentTimeMillis() - initStart);
+
+        LOGGER.debug("[INIT] Took %f", initTook);
+
+
+        float registerStart = System.currentTimeMillis();
+        register(modEventBus);
+        float registerTook = (System.currentTimeMillis() - registerStart);
+
+        LOGGER.debug("[REGISTER] Took %f", registerTook);
+
+        modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
+
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private static void registerCommonSetup(final FMLCommonSetupEvent event) {
+        ModVillagers.registerPOIs();
+    }
+
     private void init() {
         ModItems.initItems();
         ModBlocks.initBlocks();
@@ -33,55 +60,23 @@ public class RadAdditions {
         ModVillagers.register(modEventBus);
     }
 
-    private static void registerCommonSetup(final FMLCommonSetupEvent event) {
-        ModVillagers.registerPOIs();
-    }
-
-
-    public RadAdditions() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-
-        float initStart = System.currentTimeMillis();
-        init();
-        float initTook = (System.currentTimeMillis() - initStart);
-
-        LOGGER.debug("[INIT] Took %f",initTook);
-
-
-
-        float registerStart = System.currentTimeMillis();
-        register(modEventBus);
-        float registerTook = (System.currentTimeMillis() - registerStart);
-
-        LOGGER.debug("[REGISTER] Took %f",registerTook);
-
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::clientSetup);
-        
-        MinecraftForge.EVENT_BUS.register(this);
-    }
-
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             float registerCommonStart = System.currentTimeMillis();
             registerCommonSetup(event);
             float registerCommonTook = (System.currentTimeMillis() - registerCommonStart);
 
-            LOGGER.debug("[COMMON_SETUP] Took %f",registerCommonTook);
+            LOGGER.debug("[COMMON_SETUP] Took %f", registerCommonTook);
         });
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        ModBlocks.setRenderLayers(event);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
         }
     }
 

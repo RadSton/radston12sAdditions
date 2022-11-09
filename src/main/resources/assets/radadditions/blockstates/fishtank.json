@@ -1,7 +1,28 @@
 {
   "variants": {
-    "": {
+
+    "facing=down": {
+      "model": "radadditions:block/fishtank",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "radadditions:block/fishtank",
+      "y": 90
+    },
+    "facing=north": {
       "model": "radadditions:block/fishtank"
+    },
+    "facing=south": {
+      "model": "radadditions:block/fishtank",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "radadditions:block/fishtank",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "radadditions:block/fishtank",
+      "y": 270
     }
   }
 }

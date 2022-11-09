@@ -1,6 +1,12 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "radadditions:block/plantstation"
+    "particle": "radadditions:block/plantstation/plantstation_top",
+    "down": "minecraft:block/oak_planks",
+    "up": "radadditions:block/plantstation/plantstation_top",
+    "north": "radadditions:block/plantstation/plantstation_north",
+    "east": "radadditions:block/plantstation/plantstation_east",
+    "south": "radadditions:block/plantstation/plantstation_south",
+    "west": "radadditions:block/plantstation/plantstation_west"
   }
 }

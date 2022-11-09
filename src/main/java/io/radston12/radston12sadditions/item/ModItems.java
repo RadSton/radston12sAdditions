@@ -15,11 +15,9 @@ import java.util.function.Supplier;
 
 public class ModItems {
 
-    private static final CreativeModeTab DEFCREATIVE_MODE_TAB = ModCreativeModeTab.RADADDITIONS_TAB;
-
     public static final DeferredRegister<Item> DEFFERD_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RadAdditions.MOD_ID);
-
     public static final HashMap<String, RegistryObject<? extends Item>> ITEMS = new HashMap<>();
+    private static final CreativeModeTab DEFCREATIVE_MODE_TAB = ModCreativeModeTab.RADADDITIONS_TAB;
 
     public static void initItems() {
         addItem("manner", () -> new MannerSchnitten(new Item.Properties().food(new FoodProperties.Builder().nutrition(100).saturationMod(100).build()).tab(DEFCREATIVE_MODE_TAB).stacksTo(64)));

@@ -3,11 +3,9 @@ package io.radston12.radston12sadditions.villagers;
 import com.google.common.collect.ImmutableSet;
 import io.radston12.radston12sadditions.RadAdditions;
 import io.radston12.radston12sadditions.block.ModBlocks;
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,7 +26,7 @@ public class ModVillagers {
     public static final HashMap<String, RegistryObject<VillagerProfession>> VIlLAGER_PROFESSIONS = new HashMap<>();
 
     public static void initVillagers() {
-        addVillager("oceanographer", ModBlocks.getBlock("fishtank"), SoundEvents.VILLAGER_WORK_ARMORER);
+        addVillager("oceanographer", ModBlocks.getBlock("fishtank"), SoundEvents.VILLAGER_WORK_FISHERMAN);
         addVillager("zoologist", ModBlocks.getBlock("cage"), SoundEvents.VILLAGER_WORK_ARMORER);
         addVillager("pyrotechnic", ModBlocks.getBlock("pyrotechnic_table"), SoundEvents.VILLAGER_WORK_ARMORER);
         addVillager("lumberjack", ModBlocks.getBlock("sawmill"), SoundEvents.VILLAGER_WORK_ARMORER);

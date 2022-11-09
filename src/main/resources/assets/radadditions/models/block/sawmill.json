@@ -1,6 +1,7 @@
 {
   "credit": "Original StoneCutter edited with Blockbench by radston12",
   "parent": "block/block",
+  "render_type": "cutout",
   "textures": {
     "particle": "radadditions:block/sawmill/sawmill_bottom",
     "bottom": "radadditions:block/sawmill/sawmill_bottom",
