@@ -1,0 +1,13 @@
+{
+  "type": "radadditions:gem_infusing",
+  "count": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "output": {
+    "item": "minecraft:infested_stone_bricks",
+    "count": 2
+  }
+}

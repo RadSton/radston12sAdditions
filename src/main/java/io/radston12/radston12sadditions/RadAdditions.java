@@ -3,7 +3,11 @@ package io.radston12.radston12sadditions;
 import com.mojang.logging.LogUtils;
 import io.radston12.radston12sadditions.block.ModBlocks;
 import io.radston12.radston12sadditions.item.ModItems;
+import io.radston12.radston12sadditions.recipe.ModRecipes;
+import io.radston12.radston12sadditions.screen.ModMenuTypes;
+import io.radston12.radston12sadditions.screen.SawMillScreen;
 import io.radston12.radston12sadditions.villagers.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -58,6 +62,8 @@ public class RadAdditions {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -71,6 +77,8 @@ public class RadAdditions {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
+
+        MenuScreens.register(ModMenuTypes.SAW_MILL_MENU.get(), SawMillScreen::new);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

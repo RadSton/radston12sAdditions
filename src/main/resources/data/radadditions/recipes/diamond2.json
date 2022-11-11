@@ -1,0 +1,12 @@
+{
+  "type": "radadditions:gem_infusing",
+  "count": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "output": {
+    "item": "minecraft:dirt"
+  }
+}
